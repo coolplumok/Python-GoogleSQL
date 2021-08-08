@@ -115,19 +115,12 @@ CREATE TABLE jobdata.jobs (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-
-
 CREATE TABLE jobdata.job_tag (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `job_id` int(255) ,
   `tag_id` int(255) ,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-
 
 
 CREATE TABLE jobdata.tags (
@@ -143,3 +136,13 @@ CREATE TABLE jobdata.tags (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE jobdata.history (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `command` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `file_1` varchar(255) DEFAULT NULL,
+  `file_2` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
