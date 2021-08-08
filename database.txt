@@ -1,0 +1,145 @@
+
+CREATE TABLE jobdata.customer_tag (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(255) ,
+  `tag_id` int(255) ,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE jobdata.customers (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `company_id` int(255) ,
+  `mongo_id` varchar(255) ,
+  `email` varchar(255) ,
+  `phone` varchar(255) ,
+  `city` varchar(255) ,
+  `state` varchar(255) ,
+  `notes` longtext ,
+  `address_1` varchar(255) ,
+  `address_2` varchar(255) ,
+  `cuid` int(255) ,
+  `first_name` varchar(255) ,
+  `middle_name` varchar(255) ,
+  `last_name` varchar(255) ,
+  `company_name` varchar(255) ,
+  `zip_code` varchar(255) ,
+  `searchable` varchar(255) ,
+  `sort_key` varchar(255) ,
+  `status` varchar(255) ,
+  `has_different_billing_address` tinyint(1) ,
+  `alt_email` varchar(255) ,
+  `phone_e164` varchar(255) ,
+  `qbo_id` int(255) ,
+  `title` varchar(255) ,
+  `suffix` varchar(255) ,
+  `alt_phone` varchar(255) ,
+  `billing_address_1` varchar(255) ,
+  `billing_address_2` varchar(255) ,
+  `billing_city` varchar(255) ,
+  `billing_state` varchar(255) ,
+  `fax` varchar(255) ,
+  `skype` varchar(255) ,
+  `assigned_to` varchar(255) DEFAULT NULL,
+  `billing_zip_code` varchar(255) ,
+  `secondary_first_name` varchar(255) ,
+  `secondary_last_name` varchar(255) ,
+  `secondary_email` varchar(255) ,
+  `secondary_phone` varchar(255) ,
+  `use_company_name` tinyint(1) ,
+  `dial_phone` varchar(255) ,
+  `mobile_phone` varchar(255) ,
+  `website` varchar(255) ,
+  `qbo_sync_token` int(255) ,
+  `last_qbo_sync` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `parent_id` varchar(255) DEFAULT NULL,
+  `postal_code` varchar(255) ,
+  `alt_first_name` varchar(255) ,
+  `alt_last_name` varchar(255) ,
+  `lead_source` varchar(255) ,
+  `service_address_1` varchar(255) ,
+  `service_address_2` varchar(255) ,
+  `service_address_city` varchar(255) ,
+  `service_address_state` varchar(255) ,
+  `service_address_zip_code` varchar(255) ,
+  `job_notes` varchar(255) ,
+  `account_type` varchar(255) ,
+  `parent_id_previous` int(255) ,
+  `address1` varchar(255) ,
+  `xero_id` int(255) DEFAULT NULL,
+  `is_sync` varchar(255) DEFAULT NULL,
+  `notes_old` varchar(255) DEFAULT NULL,
+  `different_billing_address` varchar(255) DEFAULT NULL,
+  `xero_group_id` int(255) DEFAULT NULL,
+  `dev_qbo` varchar(255) ,
+  `source` varchar(255) DEFAULT NULL,
+  `secondar_last_name` varchar(255) DEFAULT NULL,
+  `sync_status` varchar(255) ,
+  `xero_guid` varchar(255) DEFAULT NULL,
+  `display_name` varchar(255) DEFAULT NULL,
+  `customfields` longtext DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE jobdata.jobs (
+  `id` int(255) NOT NULL,
+  `company_id` int(255) ,
+  `mongo_id` varchar(255) ,
+  `cuid` int(255) ,
+  `author_id` int(255) ,
+  `customer_id` int(255) ,
+  `job_type` varchar(255) ,
+  `status` varchar(255) ,
+  `start_time` datetime DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
+  `due_date` datetime DEFAULT NULL,
+  `billing` int(255) ,
+  `assignment_count` int(255) ,
+  `in_progress_status_log` int(255) ,
+  `invoice_status` int(255) ,
+  `notes` varchar(255) ,
+  `location` varchar(255) ,
+  `location_coords` varchar(255) DEFAULT NULL,
+  `tags_string` varchar(255) ,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `project_id` int(255) DEFAULT NULL,
+  `recurring_parent_id` int(255) DEFAULT NULL,
+  `upcoming_job_notified` int(255) DEFAULT NULL,
+  `detached_from_recurring_parent` int(255) DEFAULT NULL,
+  `assignments` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE jobdata.job_tag (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `job_id` int(255) ,
+  `tag_id` int(255) ,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+CREATE TABLE jobdata.tags (
+  `id` int(255) NOT NULL,
+  `company_id` int(255) ,
+  `mongo_id` int(255) DEFAULT NULL,
+  `cuid` int(255) ,
+  `title` varchar(255) ,
+  `type` varchar(255) ,
+  `color` varchar(255) ,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
